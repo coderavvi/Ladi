@@ -17,10 +17,26 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <BottomBar.Navigator tabBar={(props) => <CustomTabBar {...props} />}>
-        <BottomBar.Screen name="home" component={HomeScreen} />
-        <BottomBar.Screen name="chat" component={ChatScreen} />
-        <BottomBar.Screen name="selfCare" component={SelfCareScreen} />
-        <BottomBar.Screen name="settings" component={SettingsScreen} />
+        <BottomBar.Screen
+          name="home"
+          component={HomeScreen}
+          options={{ title: "Home" }}
+        />
+        <BottomBar.Screen
+          name="chat"
+          component={ChatScreen}
+          options={{ title: "Chat" }}
+        />
+        <BottomBar.Screen
+          name="selfCare"
+          component={SelfCareScreen}
+          options={{ title: "Self Care" }}
+        />
+        <BottomBar.Screen
+          name="settings"
+          component={SettingsScreen}
+          options={{ title: "Profile" }}
+        />
       </BottomBar.Navigator>
     </NavigationContainer>
   );

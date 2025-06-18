@@ -50,7 +50,9 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
             onLongPress={onLongPress}
             style={styles.tabItem}
           >
-            {icons[route.name]({ color: isFocused ? "#2da098" : "#748c94" })}
+            <View style={isFocused && styles.icon}>
+              {icons[route.name]({ color: isFocused ? "white" : "#748c94" })}
+            </View>
             <Text style={{ color: isFocused ? "#2da098" : "#748c94" }}>
               {label}
             </Text>
@@ -67,11 +69,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     position: "absolute",
-    bottom: 32,
+    bottom: 24,
     backgroundColor: "white",
     marginHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 32,
+    paddingVertical: 8,
+    borderRadius: 24,
     elevation: 8,
     shadowColor: "rgba(0, 0, 0, 0.6)",
     shadowRadius: 10,
@@ -83,5 +85,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 4,
+    borderRadius: 8,
+  },
+  icon: {
+    backgroundColor: "#2da098",
+    color: "white",
+    padding: 8,
+    borderRadius: 8,
   },
 });
