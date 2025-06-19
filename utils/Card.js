@@ -1,22 +1,29 @@
-import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Dimensions,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 const width = Dimensions.get("window").width;
 
-export default function Card({ image, title, preamble, category }) {
+export default function Card({ image, title, color, textColor, preamble }) {
   return (
     <Pressable
       style={({ pressed }) => [
         styles.container,
-        category === "stress" ? styles.stress : styles.axiety,
         pressed && styles.pressed,
+        { backgroundColor: color },
       ]}
     >
       <View>
-        <View>{image}</View>
+        <Image source={image} style={styles.image} />
 
         <View>
-          <Text>{title}</Text>
-          <Text>{preamble}</Text>
+          <Text style={[styles.titleText, { color: textColor }]}>{title}</Text>
+          <Text style={styles.text}>{preamble}</Text>
         </View>
       </View>
     </Pressable>
@@ -37,12 +44,20 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.5,
   },
-  stress: {
-    backgroundColor: "#8e97fd",
+  image: {
+    height: "75%",
+    width: "75%",
+    alignSelf: "flex-end",
   },
-
-  axiety: {
-    backgroundColor: "#ffc97e",
+  titleText: {
+    fontWeight: "bold",
+    fontSize: 18,
+    textAlign: "center",
+  },
+  text: {
+    color: "#333",
+    textAlign: "center",
+    fontSize: 13,
   },
   pressed: {
     opacity: 0.5,

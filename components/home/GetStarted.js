@@ -1,13 +1,23 @@
 import { StyleSheet, View, Text } from "react-native";
 import Card from "../../utils/Card";
 
+import { getStarted } from "../../constants/data.js";
+
 export default function GetStarted() {
   return (
     <View>
       <Text style={styles.text}>Get Started</Text>
       <View style={styles.container}>
-        <Card title="Reduce Stress" category="stress" />
-        <Card title="Reduce Anxiety" category="axiety" />
+        {getStarted.map((category) => (
+          <Card
+            key={category.title}
+            title={category.title}
+            color={category.color}
+            image={category.imageUrl}
+            textColor={category.textColor}
+            preamble={category.preamble}
+          />
+        ))}
       </View>
     </View>
   );
