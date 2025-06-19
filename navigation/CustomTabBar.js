@@ -50,10 +50,15 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
             onLongPress={onLongPress}
             style={styles.tabItem}
           >
-            <View style={isFocused && styles.icon}>
+            <View style={[styles.icon, isFocused && styles.pressed]}>
               {icons[route.name]({ color: isFocused ? "white" : "#748c94" })}
             </View>
-            <Text style={{ color: isFocused ? "#2da098" : "#748c94" }}>
+            <Text
+              style={[
+                styles.text,
+                { color: isFocused ? "#2da098" : "#748c94" },
+              ]}
+            >
               {label}
             </Text>
           </Pressable>
@@ -68,12 +73,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    position: "absolute",
-    bottom: 24,
+    // position: "absolute",
+    // bottom: 24,
     backgroundColor: "white",
-    marginHorizontal: 24,
+    height: 80,
+    // marginHorizontal: 24,
     paddingVertical: 8,
-    borderRadius: 24,
+    borderRadius: 12,
     elevation: 8,
     shadowColor: "rgba(0, 0, 0, 0.6)",
     shadowRadius: 10,
@@ -84,13 +90,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    gap: 4,
-    borderRadius: 8,
+    borderRadius: 12,
   },
   icon: {
+    padding: 8,
+  },
+  pressed: {
     backgroundColor: "#2da098",
     color: "white",
     padding: 8,
-    borderRadius: 8,
+    borderRadius: 12,
+  },
+  text: {
+    fontSize: 12,
   },
 });

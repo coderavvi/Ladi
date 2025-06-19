@@ -8,7 +8,6 @@ import HomeScreen from "../screens/HomeScreen";
 import ChatScreen from "../screens/ChatScreen";
 import SelfCareScreen from "../screens/SelfCareScreen";
 import SettingsScreen from "../screens/SettingsScreen";
-import TabIcon from "../components/TabIcon";
 import CustomTabBar from "./CustomTabBar";
 
 const BottomBar = createBottomTabNavigator();
@@ -16,7 +15,12 @@ const BottomBar = createBottomTabNavigator();
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <BottomBar.Navigator tabBar={(props) => <CustomTabBar {...props} />}>
+      <BottomBar.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        tabBar={(props) => <CustomTabBar {...props} />}
+      >
         <BottomBar.Screen
           name="home"
           component={HomeScreen}
@@ -35,7 +39,7 @@ export default function Navigation() {
         <BottomBar.Screen
           name="settings"
           component={SettingsScreen}
-          options={{ title: "Profile" }}
+          options={{ title: "Settings" }}
         />
       </BottomBar.Navigator>
     </NavigationContainer>
