@@ -5,6 +5,7 @@ import GetStarted from "../components/home/GetStarted";
 import DailyTips from "../components/home/DailyTips";
 
 import { dailyTips } from "../constants/data";
+import Recommended from "../components/home/Recommended";
 
 export default function HomeScreen() {
   return (
@@ -14,6 +15,7 @@ export default function HomeScreen() {
         <HeaderText />
         <GetStarted />
         <DailyTips tip={dailyTips[0].title} />
+        <Recommended />
       </View>
     </View>
   );

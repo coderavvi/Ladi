@@ -32,7 +32,7 @@ export default function Card({ image, title, color, textColor, preamble }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
+    height: 185,
     width: width * 0.43,
     backgroundColor: "white",
     marginRight: 16,

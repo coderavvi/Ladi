@@ -1,6 +1,7 @@
 import {
   Dimensions,
   Image,
+  Platform,
   Pressable,
   StyleSheet,
   Text,
@@ -28,7 +29,15 @@ export default function DailyTips({ tip }) {
             <Text style={styles.text}>{tip}</Text>
           </View>
           {/* Icon of idea */}
-          <Ionicons name="information-circle" color="white" size={45} />
+          <Ionicons
+            name={
+              Platform.OS === "ios"
+                ? "information-circle-outline"
+                : "information-circle"
+            }
+            color="white"
+            size={45}
+          />
         </View>
       </View>
     </Pressable>
@@ -39,7 +48,8 @@ const styles = StyleSheet.create({
   container: {
     height: height * 0.15,
     borderRadius: 6,
-    marginVertical: 16,
+    marginTop: 16,
+    marginBottom: 12,
     elevation: 10,
     shadowColor: "rgba(0, 0, 0, .7)",
     shadowRadius: 6,
