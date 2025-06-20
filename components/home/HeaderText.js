@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function HeaderText() {
+export default function HeaderText({ title, preamble }) {
   return (
     <View style={styles.rootContainer}>
-      <Text style={styles.largeText}>Good Morning, Admin</Text>
-      <Text style={styles.smallText}>How are you doing today?</Text>
+      <Text style={styles.largeText}>{title}</Text>
+      <Text style={styles.smallText}>{preamble}</Text>
     </View>
   );
 }

@@ -33,6 +33,7 @@ export const selfCare = [
     title: "Reduce Stress",
     imageUrl: stressImage,
     color: "#8e97fd",
+    textColor: "#fff",
   },
   {
     title: "Improve Productivity",
@@ -53,11 +54,13 @@ export const selfCare = [
     title: "Personal Growth",
     imageUrl: growth,
     color: "#6cb28e",
+    textColor: "#fff",
   },
   {
     title: "Better Sleep",
     imageUrl: sleep,
     color: "#4e5567",
+    textColor: "#fff",
   },
   {
     title: "Manage Depression",
@@ -69,6 +72,7 @@ export const selfCare = [
     title: "Manage Anger",
     imageUrl: anger,
     color: "#ff6868",
+    textColor: "#fff",
   },
   {
     title: "Increase Self-Awareness",
@@ -79,11 +83,13 @@ export const selfCare = [
     title: "Increase Focus",
     imageUrl: focus,
     color: "#93bfa8",
+    textColor: "#fff",
   },
   {
     title: "Manage Loneliness",
     imageUrl: loneliness,
     color: "#017a82",
+    textColor: "#fff",
   },
 ];
 

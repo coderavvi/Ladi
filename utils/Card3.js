@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 
-export default function Card({ image, title, color, textColor, preamble }) {
+export default function Card3({ image, title, color, textColor }) {
   return (
     <Pressable
       style={({ pressed }) => [
@@ -21,7 +21,6 @@ export default function Card({ image, title, color, textColor, preamble }) {
 
         <View>
           <Text style={[styles.titleText, { color: textColor }]}>{title}</Text>
-          <Text style={styles.text}>{preamble}</Text>
         </View>
       </View>
     </Pressable>
@@ -33,10 +32,11 @@ const height = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: {
-    height: height * 0.24,
+    minHeight: height * 0.25,
     width: width * 0.43,
     backgroundColor: "white",
     marginRight: 16,
+    marginVertical: 8,
     borderRadius: 8,
     padding: 8,
     elevation: 10,
@@ -46,9 +46,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
   },
   image: {
-    height: "75%",
-    width: "75%",
-    alignSelf: "flex-end",
+    height: 120,
+    width: "100%",
+    alignSelf: "center",
+    marginBottom: 12,
   },
   titleText: {
     fontWeight: "bold",

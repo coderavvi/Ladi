@@ -12,7 +12,10 @@ export default function HomeScreen() {
     <View style={styles.rootContainer}>
       <View>
         <Header />
-        <HeaderText />
+        <HeaderText
+          title="Good morning, Admin"
+          preamble="How are you doing today?"
+        />
         <GetStarted />
         <DailyTips tip={dailyTips[0].title} />
         <Recommended />
