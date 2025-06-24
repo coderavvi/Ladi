@@ -6,8 +6,21 @@ import {
   Text,
   View,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Card({ image, title, color, textColor, preamble }) {
+export default function Card({ image, title, color, textColor, preamble, bg }) {
+  const navigation = useNavigation();
+
+  function onSelectServiceHandler() {
+    //navigate to service detail screen and set the necessary screen options
+    navigation.navigate("service", {
+      title: title,
+      preamble: preamble,
+      color: color,
+      bgImage: bg,
+    });
+  }
+
   return (
     <Pressable
       style={({ pressed }) => [
@@ -15,6 +28,7 @@ export default function Card({ image, title, color, textColor, preamble }) {
         pressed && styles.pressed,
         { backgroundColor: color },
       ]}
+      onPress={onSelectServiceHandler}
     >
       <View>
         <Image source={image} style={styles.image} />

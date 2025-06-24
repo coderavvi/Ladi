@@ -17,6 +17,7 @@ export default function SelfCareScreen() {
             image={itemData.item.imageUrl}
             color={itemData.item.color}
             textColor={itemData.item.textColor}
+            bgImage={itemData.item.bgImage}
           />
         )}
         keyExtractor={(item) => item.title}

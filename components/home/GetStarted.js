@@ -16,6 +16,7 @@ export default function GetStarted() {
             image={category.imageUrl}
             textColor={category.textColor}
             preamble={category.preamble}
+            bg={category.bgImage}
           />
         ))}
       </View>

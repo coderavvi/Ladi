@@ -3,7 +3,7 @@ import { useLinkBuilder, useTheme } from "@react-navigation/native";
 import { Text } from "@react-navigation/elements";
 import { icons } from "./icons";
 
-export default function CustomTabBar({ state, descriptors, navigation }) {
+function CustomTabBar({ state, descriptors, navigation }) {
   const { colors } = useTheme();
   const { buildHref } = useLinkBuilder();
 
@@ -67,6 +67,8 @@ export default function CustomTabBar({ state, descriptors, navigation }) {
     </View>
   );
 }
+
+export default CustomTabBar;
 
 const styles = StyleSheet.create({
   tabBar: {

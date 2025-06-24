@@ -19,6 +19,7 @@ export default function Recommended() {
             image={item.imageUrl}
             color={item.color}
             title={item.title}
+            bgImage={item.bgImage}
           />
         ))}
       </ScrollView>
