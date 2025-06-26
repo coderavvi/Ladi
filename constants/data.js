@@ -151,3 +151,5 @@ export const dailyTips = [
     tip: "Treat yourself with Kindness, understanding, and patience. Acknowledge your emotions and thought without judgement. Be gentle with yourself, just as you would with a close friend.",
   },
 ];
+
+

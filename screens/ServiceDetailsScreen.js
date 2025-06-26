@@ -1,7 +1,10 @@
 import { useLayoutEffect } from "react";
-import { Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
+
 import Header from "../components/ui/Header";
+import services from "../constants/services";
+import ServiceCard from "../components/home/ServiceCard";
 
 export default function ServiceDetails({ route, navigation }) {
   useLayoutEffect(() => {
@@ -14,16 +17,36 @@ export default function ServiceDetails({ route, navigation }) {
     navigation.goBack();
   }
 
+  function renderItem(itemData) {
+    return <ServiceCard title={itemData.item.title} />;
+  }
+
+  // get services for each category
+  const categoryServices = services.filter(
+    (service) => service.category === route.params.title
+  );
+
   return (
     <>
       <StatusBar style="light" />
-      <View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Header
           onBackButtonPress={selectBackHandler}
           backgroundImage={route.params.bgImage}
         />
-        <Text>Service Details</Text>
-      </View>
+        <View style={styles.container}>
+          {categoryServices.map((item) => (
+            <ServiceCard key={item.title} title={item.title} />
+          ))}
+        </View>
+      </ScrollView>
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 16,
+    marginTop: 8,
+  },
+});
